@@ -6,7 +6,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
+
+try:
+    import seaborn as sns # pyright: ignore[reportMissingModuleSource]
+except ImportError:
+    sns = None
+    print("Warning: seaborn is not installed. Install it with 'pip install seaborn' to enable seaborn-based plots.")
 
 # Load the dataset
 # If your notebook is inside the 'Notebook' folder:
